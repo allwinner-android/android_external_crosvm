@@ -5,12 +5,13 @@ rust_library_host_rlib {
     defaults: ["crosvm_defaults"],
     crate_name: "devices",
     srcs: ["src/lib.rs"],
+    flags: ["-A unused-parens",], // added
     features: [
+        "gfxstream",
         "gpu",
         "gpu_buffer",
         "gpu_display",
         "gpu_renderer",
-        "x",
     ],
     rlibs: [
         "libaudio_streams",
